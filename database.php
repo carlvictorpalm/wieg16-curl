@@ -1,5 +1,4 @@
 <?php
-
 $dbname ="wieg16";
 $host ="localhost";
 $username ="root";

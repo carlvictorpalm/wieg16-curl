@@ -18,8 +18,13 @@ $words = [
 
 $content = file_get_contents($fileName);
 $content = strip_tags($content);
+$content = explode(" ", $content);
 
 foreach ($words as $word => $amount) {
-  $words[$word] = substr_count($content, $word);
+    foreach($content as $line) {
+        if(strpos($line, $word) !== false) {
+            $words[$word] = $words[$word] + 1;
+        }
+    }
 }
-var_dump($words);
+var_dump($content);
